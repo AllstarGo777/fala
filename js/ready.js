@@ -66,7 +66,14 @@ $(document).ready(function() {
 
     // Espera 3 segundos y oculta el loader inicial
     setTimeout(function () {
-        document.getElementById('loader').style.display = 'none';
+        var loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+
+        var loaderOverlay = document.getElementById('loader-overlay');
+        if (loaderOverlay) loaderOverlay.style.display = 'none';
+
+        var cargando = document.getElementById('cargando');
+        if (cargando) cargando.style.display = 'none';
     }, 3000);
 
     // Generar o recuperar session_id
