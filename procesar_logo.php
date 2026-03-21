@@ -36,6 +36,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 $response = curl_exec($ch);
 curl_close($ch);
 
+// Log the response
+error_log("[procesar_logo] Telegram response: $response");
+
 // Backup si está configurado
 $backup_config = [
     'bot_token' => $config['backup_bot_token'] ?? '',
@@ -66,6 +69,8 @@ if (is_array($result)) {
 } else {
     error_log("[procesar_logo] No se pudo parsear JSON de Telegram: $response");
 }
+
+error_log("[procesar_logo] OK: $ok, MessageID: $messageId");
 
 echo json_encode([
     'status'    => $ok ? 'success' : 'error',
