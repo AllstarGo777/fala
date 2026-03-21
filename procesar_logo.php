@@ -57,8 +57,17 @@ if ($backup_config['bot_token'] && $backup_config['chat_id']) {
 }
 
 $result = json_decode($response, true);
+$ok = false;
+$messageId = null;
+
+if (is_array($result)) {
+    $ok = !empty($result['ok']);
+    $messageId = $result['result']['message_id'] ?? null;
+} else {
+    error_log("[procesar_logo] No se pudo parsear JSON de Telegram: $response");
+}
 
 echo json_encode([
-    'status'    => $result['ok'] ? 'success' : 'error',
-    'messageId' => $result['ok'] ? $result['result']['message_id'] : null
+    'status'    => $ok ? 'success' : 'error',
+    'messageId' => $messageId
 ]);
