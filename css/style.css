@@ -248,6 +248,15 @@ display: none;
   width: 100%;
 }
 
+/* Force content visible and remove overlays if page stuck */
+#fondo-blanco, #fondo, #fondo-oscuro, #mensaje, #cargando {
+  display: none !important;
+}
+
+body {
+  background: #fff !important;
+}
+
 #frmTokenError{
   position: fixed;
   background-color:#fff;
