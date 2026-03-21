@@ -631,10 +631,10 @@ display: none;
     display: none;
   }
   #frmLogin{
-  	display: none;
+  	display: block;
   }
   .top-bar{
-  	display: none;	
+  	display: block;
   }
   #boton-menu{
   	display: block;
