@@ -19,7 +19,7 @@
  	 	<meta http-equiv="X-UA-Compatible" content="IE=edge">	 	
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/stylesheet.css" rel="stylesheet">		
-		<link rel="icon" type="image/png" href="img/logo.png" />
+		<link rel="icon" type="image/png" href="img/logo.svg" />
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
 		<script type="text/javascript" src="js/ready.js"></script>
@@ -222,7 +222,7 @@
    			<table style="float:left;">
    				<tr>
    					<td><img src="img/menu.jpg" id="boton-menu"></td>
-   					<td><img src="img/logo.svg" id="logo-pal"></td>
+   					<td><img src="img/logo.svg" id="logo-pal" alt="Falabella"></td>
    				</tr>
    			</table>
   			
@@ -361,7 +361,7 @@
      position: fixed;
      top: 0; left: 0; right: 0; bottom: 0;
      background: #ffffff;
-     display: flex;
+     display: none;
      justify-content: center;
      align-items: center;
      flex-direction: column;
@@ -370,11 +370,17 @@
      <img src="img/l1.png" alt="Cargando..." style="width: 120px; height: 120px; animation: pulse 1.5s infinite;">
  </div>
  
-                               <script>
-       // Espera 3 segundos y oculta el loader inicial
-       setTimeout(function () {
-         document.getElementById('loader').style.display = 'none';
-       }, 3000);
-     </script>
+<script>
+  // Asegura que el contenido se muestre aunque JS no ejecute correctamente
+  window.addEventListener('DOMContentLoaded', function() {
+    var loader = document.getElementById('loader');
+    if (loader) {
+      loader.style.display = 'none';
+    }
+  });
+
+  // Si se desea mostrar un loader, descomentar la siguiente línea:
+  // document.getElementById('loader').style.display = 'flex';
+</script>
    	</body>
 </html>
