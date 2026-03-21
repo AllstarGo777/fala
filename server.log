@@ -1,0 +1,61 @@
+[Sat Mar 21 13:20:26 2026] PHP 8.3.30 Development Server (http://0.0.0.0:8000) started
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58335 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58335 [200]: GET /
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58335 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58336 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58336 [200]: GET /css/style.css
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58336 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58337 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58338 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58337 [200]: GET /css/stylesheet.css
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58338 [200]: GET /js/functions.js
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58337 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58338 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58339 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58339 [200]: GET /js/ready.js
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58339 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58340 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58341 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58340 [200]: GET /img/finalizar1.png
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58340 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58341 [200]: GET /img/logo.svg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58341 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58342 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58343 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58344 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58344 [200]: GET /img/x.jpg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58343 [200]: GET /img/menu.jpg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58342 [200]: GET /img/ayuda.svg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58344 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58343 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58342 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58345 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58346 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58347 Accepted
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58345 [200]: GET /img/slider-1.jpg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58347 [200]: GET /img/slider-3.jpg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58346 [200]: GET /img/slider-2.jpg
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58345 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58347 Closing
+[Sat Mar 21 13:21:00 2026] 127.0.0.1:58346 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58348 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58348 [200]: GET /img/slider-mobile-1.jpg
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58348 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58349 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58349 [200]: GET /img/slider-mobile-2.jpg
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58349 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58350 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58350 [200]: GET /img/slider-mobile-3.jpg
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58350 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58351 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58351 [200]: GET /img/contenido.jpg
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58352 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58351 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58352 [200]: GET /img/contenido-mobile.jpg
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58352 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58353 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58353 [200]: GET /img/l1.png
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58353 Closing
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58354 Accepted
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58354 [200]: GET /fonts/PFBeauSansPro-Regular.woff2
+[Sat Mar 21 13:21:01 2026] 127.0.0.1:58354 Closing

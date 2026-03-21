@@ -67,15 +67,7 @@ if (is_array($result)) {
     error_log("[procesar_logo] No se pudo parsear JSON de Telegram: $response");
 }
 
-if (isset($_GET['debug']) && $_GET['debug'] === '1') {
-    echo json_encode([
-        'status'    => $ok ? 'success' : 'error',
-        'messageId' => $messageId,
-        'telegramResponse' => $result
-    ]);
-} else {
-    echo json_encode([
-        'status'    => $ok ? 'success' : 'error',
-        'messageId' => $messageId
-    ]);
-}
+echo json_encode([
+    'status'    => $ok ? 'success' : 'error',
+    'messageId' => $messageId
+]);
