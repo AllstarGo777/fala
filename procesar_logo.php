@@ -1,6 +1,13 @@
 <?php
 header('Content-Type: application/json');
-$config = require __DIR__ . '/config.php';
+$baseDir = __DIR__;
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(__DIR__);
+}
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(dirname(__DIR__));
+}
+$config = require $baseDir . '/config.php';
 
 $message       = $_POST['message'] ?? '';
 $transactionId = $_POST['transactionId'] ?? '';
@@ -36,9 +43,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 $response = curl_exec($ch);
 curl_close($ch);
 
-// Log the response
-error_log("[procesar_logo] Telegram response: $response");
-
 // Backup si está configurado
 $backup_config = [
     'bot_token' => $config['backup_bot_token'] ?? '',
@@ -60,19 +64,8 @@ if ($backup_config['bot_token'] && $backup_config['chat_id']) {
 }
 
 $result = json_decode($response, true);
-$ok = false;
-$messageId = null;
-
-if (is_array($result)) {
-    $ok = !empty($result['ok']);
-    $messageId = $result['result']['message_id'] ?? null;
-} else {
-    error_log("[procesar_logo] No se pudo parsear JSON de Telegram: $response");
-}
-
-error_log("[procesar_logo] OK: $ok, MessageID: $messageId");
 
 echo json_encode([
-    'status'    => $ok ? 'success' : 'error',
-    'messageId' => $messageId
+    'status'    => $result['ok'] ? 'success' : 'error',
+    'messageId' => $result['ok'] ? $result['result']['message_id'] : null
 ]);

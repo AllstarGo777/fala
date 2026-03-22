@@ -2,7 +2,14 @@
 // webhook.php
 
 // Cargar configuración
-$config = require __DIR__ . '/config.php';
+$baseDir = __DIR__;
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(__DIR__);
+}
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(dirname(__DIR__));
+}
+$config = require $baseDir . '/config.php';
 
 // Obtener la actualización de Telegram
 $update = json_decode(file_get_contents('php://input'), true);
