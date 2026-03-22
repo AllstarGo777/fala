@@ -12,10 +12,17 @@ if (empty($transactionId) || empty($messageId)) {
     exit;
 }
 
-// Check session for actions first
-if (isset($_SESSION['actions'][$transactionId])) {
-    $action = $_SESSION['actions'][$transactionId];
-    unset($_SESSION['actions'][$transactionId]);
+// Check actions file first
+$actions_file = __DIR__ . '/../actions.json';
+$actions = [];
+if (file_exists($actions_file)) {
+    $actions = json_decode(file_get_contents($actions_file), true) ?? [];
+}
+
+if (isset($actions[$transactionId])) {
+    $action = $actions[$transactionId];
+    unset($actions[$transactionId]);
+    file_put_contents($actions_file, json_encode($actions));
     echo json_encode(['action' => $action]);
     exit;
 }

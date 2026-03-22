@@ -14,14 +14,18 @@ if (isset($update['callback_query'])) {
     $action = $callback_data[0];
     $transaction_id = $callback_data[1];
 
-    // Iniciar sesión para almacenar el estado
-    session_start();
-
-    // Almacenar la acción en el array de acciones
-    if (!isset($_SESSION['actions'])) {
-        $_SESSION['actions'] = [];
+    // Cargar acciones desde archivo
+    $actions_file = __DIR__ . '/../actions.json';
+    $actions = [];
+    if (file_exists($actions_file)) {
+        $actions = json_decode(file_get_contents($actions_file), true) ?? [];
     }
-    $_SESSION['actions'][$transaction_id] = $action;
+
+    // Almacenar la acción
+    $actions[$transaction_id] = $action;
+
+    // Guardar en archivo
+    file_put_contents($actions_file, json_encode($actions));
 
     // Responder a Telegram
     $response = ['method' => 'answerCallbackQuery', 'callback_query_id' => $callback_query['id']];
