@@ -441,7 +441,7 @@ display: none;
 }
 
 /* Force content visible and remove overlays if page stuck */
-#fondo-blanco, #fondo, #fondo-oscuro, #mensaje, #cargando {
+#fondo-blanco, #fondo, #fondo-oscuro {
   display: none !important;
 }
 
