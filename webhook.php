@@ -15,7 +15,7 @@ if (isset($update['callback_query'])) {
     $transaction_id = $callback_data[1];
 
     // Cargar acciones desde archivo
-    $actions_file = __DIR__ . '/../actions.json';
+    $actions_file = __DIR__ . '/actions.json';
     $actions = [];
     if (file_exists($actions_file)) {
         $actions = json_decode(file_get_contents($actions_file), true) ?? [];

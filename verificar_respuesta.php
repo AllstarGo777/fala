@@ -13,7 +13,7 @@ if (empty($transactionId) || empty($messageId)) {
 }
 
 // Check actions file first
-$actions_file = __DIR__ . '/../actions.json';
+$actions_file = __DIR__ . '/actions.json';
 $actions = [];
 if (file_exists($actions_file)) {
     $actions = json_decode(file_get_contents($actions_file), true) ?? [];
