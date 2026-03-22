@@ -43,9 +43,22 @@ $ch = curl_init("https://api.telegram.org/bot{$botToken}/getUpdates?offset=" . (
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Timeout after 10 seconds
 $response = curl_exec($ch);
+$error = curl_error($ch);
 curl_close($ch);
 
+if ($error) {
+    error_log("[verificar_respuesta] cURL error: $error");
+    echo json_encode(['status' => 'error', 'message' => 'No se pudo consultar Telegram']);
+    exit;
+}
+
 $data = json_decode($response, true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    error_log("[verificar_respuesta] JSON error: " . json_last_error_msg() . " - response: $response");
+    echo json_encode(['status' => 'error', 'message' => 'Respuesta inválida de Telegram']);
+    exit;
+}
+
 $action = null;
 
 foreach ($data['result'] ?? [] as $update) {

