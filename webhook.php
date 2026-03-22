@@ -27,6 +27,8 @@ if (isset($update['callback_query'])) {
     // Guardar en archivo
     file_put_contents($actions_file, json_encode($actions));
 
+    error_log("[webhook] Action stored: $action for $transaction_id");
+
     // Responder a Telegram
     $response = ['method' => 'answerCallbackQuery', 'callback_query_id' => $callback_query['id']];
     echo json_encode($response);

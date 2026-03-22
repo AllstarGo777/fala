@@ -23,6 +23,7 @@ if (isset($actions[$transactionId])) {
     $action = $actions[$transactionId];
     unset($actions[$transactionId]);
     file_put_contents($actions_file, json_encode($actions));
+    error_log("[verificar_respuesta] Action found: $action for $transactionId");
     echo json_encode(['action' => $action]);
     exit;
 }
