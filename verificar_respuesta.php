@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-$config = require __DIR__ . '/config.php';
+$config = require __DIR__ . '/../config.php';
 
 $transactionId = $_POST['transactionId'] ?? '';
 $messageId     = $_POST['messageId'] ?? '';
@@ -12,12 +12,21 @@ if (empty($transactionId) || empty($messageId)) {
     exit;
 }
 
+// Check session for actions first
+if (isset($_SESSION['actions'][$transactionId])) {
+    $action = $_SESSION['actions'][$transactionId];
+    unset($_SESSION['actions'][$transactionId]);
+    echo json_encode(['action' => $action]);
+    exit;
+}
+
 $botToken = $config['bot_token'];
 $chatId   = $config['chat_id'];
 $offset   = $_SESSION['last_update_id'] ?? 0;
 
 $ch = curl_init("https://api.telegram.org/bot{$botToken}/getUpdates?offset=" . ($offset + 1));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Timeout after 10 seconds
 $response = curl_exec($ch);
 curl_close($ch);
 
