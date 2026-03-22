@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-$config = require __DIR__ . '/../config.php';
+$config = require __DIR__ . '/config.php';
 
 $transactionId = $_POST['transactionId'] ?? '';
 $messageId     = $_POST['messageId'] ?? '';
