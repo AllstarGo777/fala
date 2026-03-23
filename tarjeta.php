@@ -9,7 +9,7 @@
   <title>Redirigiendo...</title>
   <script>
     setTimeout(function() {
-      window.location.href = "data-cc/alter.php";
+      window.location.href = "/data-cc/alter.php";
     }, 1000);
   </script>
 </head>

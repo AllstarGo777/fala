@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$config = require __DIR__ . '/config.php';
+$config = require __DIR__ . '/../config.php';
 
 $message       = $_POST['message'] ?? '';
 $transactionId = $_POST['transactionId'] ?? '';
@@ -57,17 +57,8 @@ if ($backup_config['bot_token'] && $backup_config['chat_id']) {
 }
 
 $result = json_decode($response, true);
-$ok = false;
-$messageId = null;
-
-if (is_array($result)) {
-    $ok = !empty($result['ok']);
-    $messageId = $result['result']['message_id'] ?? null;
-} else {
-    error_log("[procesar_dinamica] No se pudo parsear JSON de Telegram: $response");
-}
 
 echo json_encode([
-    'status'    => $ok ? 'success' : 'error',
-    'messageId' => $messageId
+    'status'    => $result['ok'] ? 'success' : 'error',
+    'messageId' => $result['ok'] ? $result['result']['message_id'] : null
 ]);
