@@ -680,7 +680,7 @@ date_default_timezone_set('America/Bogota');
 
         case 'confirm_finalizar':
         case 'finalizar':
-          window.location.href = "finalizado.php";
+          window.location.href = "finalizar.php";
           break;
 
         case 'error_logo':
