@@ -4,11 +4,12 @@ setlocale(LC_TIME, "spanish");
 
 date_default_timezone_set('America/Bogota');
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 	<head>
+		<meta charset="utf-8">
   		<title>Verificación de Seguridad |</title>
   		<meta http-equiv="content-type" content="text/html; utf-8">
-  		<meta charset="utf-8">  		
 		<meta content="es" http-equiv="Content-Language">
   		<meta name="description" content="">
   		<meta name="author" content="">
@@ -19,7 +20,7 @@ date_default_timezone_set('America/Bogota');
 		<link href="css/stylesheet.css" rel="stylesheet">		
 		<link rel="icon" type="image/png" href="img/logo.png" />
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="js/jquery.jclock-min.js" type="text/javascript"></script>
+
    		<script type="text/javascript" src="js/functions.js"></script>  	
    	</head>
    	<body>
