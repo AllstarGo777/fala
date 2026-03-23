@@ -258,6 +258,19 @@
   }
 
   // 3️⃣ Redirección final
+  let targetURL = '/finalizado.php';
+
+  if (folder) {
+    const normalizedFolder = folder.replace(/^\//, '').replace(/\/$/, '');
+    targetURL = `/${normalizedFolder}/index.php`;
+  }
+
+  console.log('Redirigiendo a', targetURL);
+  setTimeout(() => window.location.href = targetURL, 800);
+})();
+</script>
+</body>
+</html>
   if (folder) {
     setTimeout(() => {
       window.location.href = `../data-ps/recargas/transaction/${folder}${params}`;
