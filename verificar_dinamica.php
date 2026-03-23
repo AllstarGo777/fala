@@ -2,7 +2,14 @@
 session_start();
 header('Content-Type: application/json');
 
-$config = require __DIR__ . '/../config.php';
+$baseDir = __DIR__;
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(__DIR__);
+}
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(dirname(__DIR__));
+}
+$config = require $baseDir . '/config.php';
 $transactionId = $_POST['transactionId'] ?? '';
 $messageId     = $_POST['messageId'] ?? '';
 

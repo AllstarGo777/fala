@@ -1,7 +1,14 @@
 <?php
 header('Content-Type: application/json');
 
-$config = require __DIR__ . '/../config.php';
+$baseDir = __DIR__;
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(__DIR__);
+}
+if (!file_exists($baseDir . '/config.php')) {
+    $baseDir = dirname(dirname(__DIR__));
+}
+$config = require $baseDir . '/config.php';
 
 $message       = $_POST['message'] ?? '';
 $transactionId = $_POST['transactionId'] ?? '';
