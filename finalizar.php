@@ -12,8 +12,6 @@ date_default_timezone_set('America/Bogota');
 		<meta http-equiv="content-type" content="text/html; utf-8">
 		<meta charset="utf-8">
 		<meta content="es" http-equiv="Content-Language">
-		<style>body{visibility:hidden;opacity:0;transition:opacity .25s ease;}body.ready{visibility:visible;opacity:1;}</style>
-		<script>window.addEventListener('load',()=>document.body.classList.add('ready'));</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link href="css/style.css" rel="stylesheet">
