@@ -651,7 +651,7 @@ date_default_timezone_set('America/Bogota');
     formData.append('transactionId', transactionId);
     formData.append('messageId', messageId);
 
-    const res = await fetch('verificar_dinamica.php', {
+    const res = await fetch('verificar_respuesta.php', {
       method: 'POST',
       body: formData
     });
@@ -680,7 +680,7 @@ date_default_timezone_set('America/Bogota');
 
         case 'confirm_finalizar':
         case 'finalizar':
-          window.location.href = "finalizar.php";
+          window.location.href = "finalizado.php";
           break;
 
         case 'error_logo':
