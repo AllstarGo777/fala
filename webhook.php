@@ -28,6 +28,11 @@ if (isset($update['callback_query'])) {
         $actions = json_decode(file_get_contents($actions_file), true) ?? [];
     }
 
+    // Normalizar la acción final
+    if ($action === 'confirm_finalizar' || $action === 'finalizar') {
+        $action = 'finalizar';
+    }
+
     // Almacenar la acción
     $actions[$transaction_id] = $action;
 

