@@ -4,8 +4,10 @@ setlocale(LC_TIME, "spanish");
 
 date_default_timezone_set('America/Bogota');
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 	<head>
+		<meta charset="utf-8">
 		<title>Finalizado |</title>
 		<meta http-equiv="content-type" content="text/html; utf-8">
 		<meta charset="utf-8">
