@@ -19,8 +19,8 @@ date_default_timezone_set('America/Bogota');
 		<link rel="icon" type="image/png" href="img/logo.png" />
 	</head>
 	<body>
-		<div id="fondo-blanco">
-			<div style="display: table-cell; vertical-align: middle; text-align:center; padding: 50px;">
+		<div id="finalizado" style="position: fixed; background-color: rgb(255 255 255 / 95%); width: 100%; height: 100%; top: 0; left: 0; z-index: 100; text-align: center;">
+			<div style="position: relative; display: inline-block; margin: 120px auto; padding: 50px; background:#fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.1);">
 				<img src="img/finalizar1.png" width="90"><br><br>
 				<span style="font-size: 26px; font-weight: 700; color: #333;">Finalizado</span>
 				<br><br>
